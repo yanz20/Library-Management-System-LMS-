@@ -18,22 +18,25 @@
 		<spring:url value="/book/save" var="saveURL" />
 		<h2>Book</h2>
 		<form:form modelAttribute="bookForm" method="post" action="${saveURL }" cssClass="form">
-			<form:hidden path="bookID"/>
+			<div class="form-group">
+				<label for="bookID">Book ID</label>
+				<form:input path="bookID" cssClass = "form-control" id="bookID" />
+			</div>
 			<div class="form-group">
 				<label for="bookname">BookName</label>
-				<form:Input path="bookname" cssClass = "form-control" id="bookname" />
+				<form:input path="bookname" cssClass = "form-control" id="bookname" />
 			</div>
 			<div class="form-group">
 				<label for="publisher">Publisher</label>
-				<form:Input path="publisher" cssClass = "form-control" id="publisher" />
+				<form:input path="publisher" cssClass = "form-control" id="publisher" />
 			</div>
 			<div class="form-group">
 				<label for="author">Author</label>
-				<form:Input path="author" cssClass = "form-control" id="author" />
+				<form:input path="author" cssClass = "form-control" id="author" />
 			</div>
 			<div class="form-group">
-				<label for="isIssued">isIssued</label>
-				<form:Input path="isIssued" cssClass = "form-control" id="isIssued" />
+				<label for="Issued">Issued</label>
+				<form:input path="Issued" cssClass = "form-control" id="Issued" />
 			</div>
 			<button type="submit" class="btn btn-primary">Save</button>
 		</form:form>

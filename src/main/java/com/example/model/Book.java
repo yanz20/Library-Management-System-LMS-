@@ -5,10 +5,9 @@ public class Book {
 	private String bookname;
 	private String publisher;
 	private String author;
-	private boolean isIssued;
+	private String issued;
 	
-	
-	public int getBookID() {
+	public Integer getBookID() {
 		return bookID;
 	}
 	public void setBookID(int bookID) {
@@ -32,11 +31,11 @@ public class Book {
 	public void setAuthor(String author) {
 		this.author = author;
 	}
-	public boolean isIssued() {
-		return isIssued;
+	public String getIssued() {
+		return issued;
 	}
-	public void setIssued(boolean isIssued) {
-		this.isIssued = isIssued;
+	public void setIssued(String issued) {
+		this.issued = issued;
 	}
 	
 	

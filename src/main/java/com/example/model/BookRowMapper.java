@@ -13,7 +13,7 @@ public class BookRowMapper implements RowMapper<Book> {
 		book.setBookname(rs.getString("bookname"));
 		book.setPublisher(rs.getString("publisher"));
 		book.setAuthor(rs.getString("author"));
-		book.setIssued(rs.getBoolean("isIssued"));
+		book.setIssued(rs.getString("issued"));
 		return book;
 	}
 

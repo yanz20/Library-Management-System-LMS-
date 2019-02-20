@@ -47,15 +47,15 @@ public class BookDaoImpl implements BookDao {
 
 	@Override
 	public void addBook(Book book) {
-		String query = "INSERT INTO Books(bookID, bookname, publisher,author, isIssued) VALUES(?,?,?,?,?)";
-		jdbcTemplate.update(query, book.getBookID(), book.getBookname(), book.getPublisher(), book.getAuthor(), book.isIssued());
+		String query = "INSERT INTO Books(bookID, bookname, publisher,author, issued) VALUES(?,?,?,?,?)";
+		jdbcTemplate.update(query, book.getBookID(), book.getBookname(), book.getPublisher(), book.getAuthor(), book.getIssued());
 		
 	}
 
 	@Override
 	public void updateBook(Book book) {
-		String query = "UPDATE Books SET bookID=?, bookname=?, publisher=?,author=?, isIssued=?";
-		jdbcTemplate.update(query, book.getBookID(), book.getBookname(), book.getPublisher(), book.getAuthor(), book.isIssued());
+		String query = "UPDATE Books SET bookID=?, bookname=?, publisher=?,author=?, issued=?";
+		jdbcTemplate.update(query, book.getBookID(), book.getBookname(), book.getPublisher(), book.getAuthor(), book.getIssued());
 		
 	}
 

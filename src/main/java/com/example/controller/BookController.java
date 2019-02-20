@@ -36,7 +36,6 @@ public class BookController {
 		
 		Book book = libraryService.findBookByID(id);
 		model.addObject("bookForm", book);
-		
 		model.setViewName("book_form");
 		return model;
 	}
@@ -65,11 +64,7 @@ public class BookController {
 	
 	@RequestMapping(value="/save", method=RequestMethod.POST)
 	public ModelAndView saveOrUpdate(@ModelAttribute("bookForm") Book book) {
-		if(book.getBookID() > 0) {
-			libraryService.updateBook(book);
-		}else {
-			libraryService.addBook(book);
-		}
+		libraryService.addBook(book);
 		
 		return new ModelAndView("redirect:/book/list");
 	}

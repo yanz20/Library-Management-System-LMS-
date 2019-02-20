@@ -23,29 +23,32 @@
 					<th scope="row">Publisher</th>
 					<th scope="row">Author</th>
 					<th scope="row">isIssued</th>
+					<th scope="row">Edit by ID</th>
+					<th scope="row">Edit by Name</th>
+					<th scope="row">Delete</th>
 				</tr>
 			</thead>
 			<tbody>
-				<c:forEach items="{book_list}" var="book" >
-					<tr>
-						<td>${book.bookID }</td>
-						<td>${book.bookname }</td>
-						<td>${book.publisher }</td>
-						<td>${book.author }</td>
-						<td>${book.isIssued }</td>
-						<td>
-							<spring:url value="/book/updateid/${book.bookID}" var="updateidURL" />
-							<a class="btn btn-primary" href="${updateidURL }" role="button">UpdateByID</a>
-						</td>
-						<td>
-							<spring:url value="/book/updatename/${book.bookname}" var="updatenameURL" />
-							<a class="btn btn-primary" href="${updatenameURL }" role="button">UpdateByName</a>
-						</td>
-						<td>
-							<spring:url value="/book/delete/${book.bookID}" var="deleteURL" />
-							<a class="btn btn-primary" href="${deleteURL }" role="button">Delete</a>
-						</td>
-					</tr>
+				<c:forEach items="${book_list}" var="book" >
+						<tr>
+							<td>${book.bookID}</td>
+							<td>${book.bookname}</td>
+							<td>${book.publisher}</td>
+							<td>${book.author}</td>
+							<td>${book.issued}</td>
+							<td>
+								<spring:url value="/book/updateid/${book.bookID}" var="updateidURL" />
+								<a class="btn btn-primary" href="${updateidURL }" role="button">UpdateByID</a>
+							</td>
+							<td>
+								<spring:url value="/book/updatename/${book.bookname}" var="updatenameURL" />
+								<a class="btn btn-primary" href="${updatenameURL }" role="button"> UpdateByName </a>
+							</td>
+							<td>
+								<spring:url value="/book/delete/${book.bookID}" var="deleteURL" />
+								<a class="btn btn-primary" href="${deleteURL }" role="button"> Delete</a>
+							</td>
+						</tr>
 				</c:forEach>
 			</tbody>
 		</table>
